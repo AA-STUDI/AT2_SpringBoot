@@ -16,6 +16,6 @@
 
 ### Bash
 
-`./local_test.ps1` : test local de l'image Docker (avant déploiement.)
+`./local_test.sh` : test local de l'image Docker (avant déploiement.)
 
-`./deploy.ps1` : déploiement de l'application sur le cluster Kubernetes.
+`./deploy.sh` : déploiement de l'application sur le cluster Kubernetes.
