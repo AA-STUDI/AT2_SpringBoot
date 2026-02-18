@@ -19,3 +19,7 @@
 `./local_test.sh` : test local de l'image Docker (avant déploiement.)
 
 `./deploy.sh` : déploiement de l'application sur le cluster Kubernetes.
+
+## Supprimer l'application du cluster Kubernetes
+
+`kubectl delete -f k8s/`
