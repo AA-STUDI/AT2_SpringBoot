@@ -4,6 +4,7 @@
 
 - Docker : https://www.docker.com/
 - Compte AWS configuré localement.
+- Kubernetes CLI
 - Cluster Kubernetes (voir https://github.com/AA-STUDI/AT1_Infrastructure pour le déploiement de l'infrastructure.)
 
 ## Scripts automatisés
