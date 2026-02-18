@@ -24,8 +24,9 @@ $AWS_ACCOUNT_ID = (aws sts get-caller-identity --query Account --output text)
 # Creation de l'URL ECR
 $ECR_URL = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
 
-# Connexion ECR (password/token récupérée via AWS CLI)
-aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_URL | Out-Null
+# Connexion ECR : (mode insecurisé pour éviter le pipe PowerShell qui corrompt le token)
+$ECR_PASSWORD = (aws ecr get-login-password --region $AWS_REGION).Trim()
+docker login --username AWS --password $ECR_PASSWORD $ECR_URL | Out-Null
 if ($LASTEXITCODE -ne 0) { Write-Host "Erreur lors de la connexion ECR" ; exit 1 }
 
 # Creation/tag du nom de l'image ECR
